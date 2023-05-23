@@ -8,7 +8,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
   it('verifica o título da aplicação', function() {
     cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
   })
-
   it('preenche os campos obrigatórios e envia o formulário', function(){
     const longText = 'Teste teste teste teste'
     cy.get('#firstName').type('Lourimar')
@@ -44,7 +43,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
 
     cy.get('.error').should('be.visible')
   })
-
   it('preeenche e limpa os campos nome, sobrenome, email e telefone', function(){
     cy.get('#firstName')
       .type('Lourimar')
@@ -115,7 +113,7 @@ describe('Central de Atendimento ao Cliente TAT', function() {
         cy.wrap($radio).should('be.checked')
       })
   })
-  it('marca ambos checkboxes , depois desmarca o último', function(){
+  it('marca ambos checkboxes, depois desmarca o último', function(){
     cy.get('input[type="checkbox"]')
       .check()
       .should('be.checked')
